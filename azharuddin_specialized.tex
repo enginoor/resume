@@ -1,0 +1,172 @@
+%-----------------
+% Resume in Latex — one-page version (v3)
+% v3: slightly tighter margins/spacing + borderline bullets pulled to 1 line.
+% No content removed. Recompile to confirm 1 page.
+%----------------
+
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage[paperwidth=210mm, paperheight=297mm, top=0.4in, bottom=0.4in, left=0.5in, right=0.5in]{geometry}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{cmap}
+\usepackage[scale=0.90,lf]{FiraMono}
+\usepackage{fontawesome5}
+
+\definecolor{light-grey}{gray}{0.83}
+\definecolor{dark-grey}{gray}{0.3}
+\definecolor{text-grey}{gray}{.08}
+
+\usepackage[normalem]{ulem}
+\renewcommand{\ULdepth}{1.8pt}
+\newcommand{\myuline}[1]{%
+  \uline{#1}%
+}
+
+\usepackage{tgheros}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+    \bfseries \vspace{-4pt} \raggedright \large
+}{}{0em}{}[\color{light-grey} {\titlerule[2pt]} \vspace{-10pt}]
+\titlespacing*{\section}{0pt}{10pt}{2.3ex}
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-4pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{0pt}\\
+      \textit{#3} & {\color{dark-grey} \small #4}\\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      #1 & {\color{dark-grey}\small #2} \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-6pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[label=\textbullet]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-8pt}}
+
+\color{text-grey}
+
+\begin{document}
+
+%-------HEADING-------
+\begin{center}
+    \textbf{\Huge MD AZHARUDDIN} \\ \vspace{3pt}
+    \small +91 8235556222 $|$ \href{mailto:azharsayzz@gmail.com}{azharsayzz@gmail.com} $|$ \href{https://linkedin.com/in/azharuddindev}{linkedin.com/in/azharuddindev} $|$ \href{https://github.com/bunnysayzz}{github.com/bunnysayzz} $|$ Bengaluru
+    \\ \vspace{-5pt}
+\end{center}
+
+%--------SUMMARY--------
+\section{SUMMARY}
+\begin{itemize}[leftmargin=0in, label={}]
+    \small{\item{
+     GenAI engineer building agentic AI systems, LLM automation, and multi-agent orchestration on Vertex AI. Shipped production workflows at Accenture; open-source agentic platforms used globally.
+    }}
+\end{itemize}\vspace{-8pt}
+
+%--------EXPERIENCE--------
+\section{EXPERIENCE}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Accenture}{Oct 2025 to Present}
+      {Associate Software Engineer}{Bengaluru, India}
+      \resumeItemListStart
+        \resumeItem{Built agentic orchestration on \textbf{Vertex AI} with \textbf{Gemini Enterprise} automating incident analysis; cut resolution time \textbf{40\%}.}
+        \resumeItem{Developed AI workflow automations in \textbf{Python} integrating enterprise APIs and secure file transfers, eliminating \textbf{15+ hours/week} of manual work.}
+        \resumeItem{Implemented end-to-end \textbf{Playwright} test automation with \textbf{95\%} coverage for agentic workflows.}
+        \resumeItem{Built internal \textbf{RAG pipeline} with \textbf{chunking}, ChromaDB and OpenAI embeddings for ticket classification; cut manual triage \textbf{60\%}.}
+        \resumeItem{Built \textbf{LLM evaluation pipeline} with DeepEval + LangSmith measuring faithfulness and hallucination rates; improved output quality \textbf{35\%}.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%--------PROJECTS--------
+\section{PROJECTS}
+    \resumeSubHeadingListStart
+
+      \resumeProjectHeading
+          {\textbf{AgentOS Studio} $|$ \emph{Python, FastAPI, OpenAI, Anthropic, Gemini, MCP, Firebase, Docker} $|$ \href{https://github.com/bunnysayzz/AgentOS}{GitHub} $|$ \href{https://letsagentos.onrender.com}{Live Demo}}{}
+          \resumeItemListStart
+            \resumeItem{Production-grade platform for creating, orchestrating, and monitoring \textbf{AI agents} with multi-step workflows and autonomous execution across isolated multi-tenant workspaces.}
+            \resumeItem{Built \textbf{MCP gateway} routing LLM requests across \textbf{OpenAI, Claude, and Gemini} with automatic model fallback, usage analytics, and cost tracking.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Code Review Agent} $|$ \emph{Python, HuggingFace, LoRA, PEFT, FastAPI, MLflow, Docker} $|$ \href{https://github.com/bunnysayzz/code-review-agent}{GitHub} $|$ \href{https://code-review-agent.onrender.com}{Live Demo}}{}
+          \resumeItemListStart
+            \resumeItem{Built \textbf{autonomous code review agent} detecting bugs, vulnerabilities, and code smells in pull requests using a fine-tuned LLM with structured outputs.}
+            \resumeItem{Fine-tuned \textbf{Llama 3} with \textbf{LoRA/QLoRA} on 5K PR samples from a \textbf{data preprocessing pipeline}; accuracy \textbf{62\% → 85\%} on a 500-case benchmark.}
+          \resumeItemListEnd
+
+
+
+    \resumeSubHeadingListEnd
+
+%--------ACHIEVEMENTS--------
+\section{ACHIEVEMENTS}
+\resumeItemListStart
+    \resumeItem{\textbf{Accenture Agentic AI Hackathon} 2025 runner-up: built Release Planner with LangGraph and Gemini automating release docs from code changes.}
+    \resumeItem{\textbf{Open-source contributor}: 11 PRs merged across \textbf{rustdesk, nocodb, composio, crewAI, pr-agent, dlt, Maccy, MacTools}; 48 PRs raised on GitHub.}
+    \resumeItem{\textbf{Mac AI Chat}: native macOS \textbf{conversational AI} app unifying GPT-4, Claude, Gemini with \textbf{150+ stars, 1500+ downloads}.}
+\resumeItemListEnd
+
+%--------SKILLS--------
+\section{SKILLS}
+ \begin{itemize}[leftmargin=0in, label={}]
+    \small{\item{
+     \textbf{Languages} {: Python, JavaScript, SQL, C++, Swift}\vspace{1pt} \\
+     \textbf{AI \& Agentic Systems} {: Generative AI, LangGraph, LangChain, CrewAI, AutoGen, MCP, Tool Calling, OpenAI API, Anthropic API, Gemini API, LLM Integration, RAG, Multi-Agent Systems, Prompt Engineering, NLP}\vspace{1pt} \\
+     \textbf{LLM Ops} {: LoRA, QLoRA, HuggingFace Transformers, PEFT, Fine-tuning, Model Evaluation, DeepEval, RAGAS, LLM-as-a-Judge}\vspace{1pt} \\
+     \textbf{Vector Databases} {: ChromaDB, Pinecone, FAISS, Semantic Search, Embeddings}\vspace{1pt} \\
+     \textbf{Backend \& Automation} {: FastAPI, RESTful APIs, Microservices, Firebase, Playwright, Pandas, Agile}\vspace{1pt} \\
+     \textbf{Cloud \& DevOps} {: Google Cloud, Vertex AI, AWS, Docker, Git, CI/CD}\vspace{1pt} \\
+     \textbf{MLOps \& Observability} {: MLflow, LangSmith, Langfuse, Weights \& Biases, Experiment Tracking}
+    }}
+ \end{itemize}\vspace{-8pt}
+
+%--------EDUCATION--------
+\section{EDUCATION}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Lovely Professional University}{2021 to 2025}
+      {B.Tech in Computer Science and Engineering. CGPA: 7.49}{Jalandhar, Punjab}
+  \resumeSubHeadingListEnd
+
+%--------CERTIFICATIONS--------
+\section{CERTIFICATIONS}
+\resumeItemListStart
+    \resumeItem{\href{https://www.credly.com/badges/1554037b-144f-473e-b9c0-1e46f70cd9c5/public_url}{\textbf{Gemini Enterprise Agent Development}} $|$ \href{https://www.credly.com/badges/ad27ae61-d25d-4233-9d33-b7a90a50fcb5/public_url}{\textbf{Deployment}} $|$ Google Cloud Certified Partner Specialist~\hfill~{\color{dark-grey}Jul 2026}}
+    \resumeItem{\href{https://catalog-education.oracle.com/pls/certview/sharebadge?id=9C21FA710E65DA929318D24D303260ED715610F74E52386DEA00D7AFA53CA715}{\textbf{Oracle Cloud Infrastructure 2025 Certified DevOps Professional}} $|$ Oracle~\hfill~{\color{dark-grey}Oct 2025}}
+    \resumeItem{\href{https://catalog-education.oracle.com/pls/certview/sharebadge?id=3B66449C498644E69668BCC51FD852528F48DBCCFD8B65D860D9E0FACFEECAB2}{\textbf{Oracle Database@AWS Certified Architect Professional}} $|$ Oracle~\hfill~{\color{dark-grey}Oct 2025}}
+\resumeItemListEnd
+
+\end{document}
