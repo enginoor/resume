@@ -1,0 +1,47 @@
+name: Build Resume PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'azharuddin_specialized.tex'
+      - '.github/workflows/build-resume.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX to PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: azharuddin_specialized.tex
+
+      - name: Rename PDF
+        run: mv azharuddin_specialized.pdf MD_Azharuddin_Resume.pdf
+
+      - name: Verify single page
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+          pages=$(pdfinfo MD_Azharuddin_Resume.pdf | awk '/^Pages:/{print $2}')
+          echo "PDF pages: $pages"
+          if [ "$pages" != "1" ]; then
+            echo "::error::Resume spilled over to $pages pages - fix the .tex!"
+            exit 1
+          fi
+
+      - name: Commit built PDF
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add MD_Azharuddin_Resume.pdf
+          git diff --cached --quiet && echo "No changes to PDF" || {
+            git commit -m "Auto-build resume PDF [skip ci]"
+            git push
+          }
+
